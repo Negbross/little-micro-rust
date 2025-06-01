@@ -1,17 +1,17 @@
-use std::sync::Arc;
-use axum::extract::State;
-use axum::http::StatusCode;
-use axum::Json;
-use axum::response::IntoResponse;
-use sea_orm::{ActiveModelTrait, ColumnTrait, EntityOrSelect, EntityTrait, IntoActiveModel, ModelTrait, QueryFilter, Set};
-use serde::{Deserialize, Serialize};
-use serde_json::json;
-use entity::user;
-use entity::user::ActiveModel;
 use crate::app::hashing::hash::{hash_password, verify_password};
 use crate::respons::{api_response, api_response_single};
 use crate::routes::{internal_error, not_found_error};
 use crate::utils::AppState;
+use axum::extract::State;
+use axum::http::StatusCode;
+use axum::response::IntoResponse;
+use axum::Json;
+use entity::user;
+use entity::user::ActiveModel;
+use sea_orm::{ActiveModelTrait, ColumnTrait, EntityOrSelect, EntityTrait, ModelTrait, QueryFilter, Set};
+use serde::Deserialize;
+use serde_json::json;
+use std::sync::Arc;
 
 #[derive(Debug, Deserialize)]
 pub struct UserRequest {
