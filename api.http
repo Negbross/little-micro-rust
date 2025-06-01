@@ -1,0 +1,92 @@
+POST http://localhost:80/api/item
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="field-name"; filename="file.txt"
+
+< ./relative/path/to/local_file.txt
+--WebAppBoundary--
+
+###
+### GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=RustRover
+
+###
+POST http://localhost:8000/posts
+Accept: application/json
+Content-Type: application/json
+
+{
+  "title": "divo test",
+  "text": "Fungsi cognitive"
+}
+
+###
+PATCH http://localhost:8000/post/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "title": "divo testi",
+  "text": "keberagaman otak"
+}
+
+###
+DELETE http://localhost:8000/post/3
+Accept: application/json
+Content-Type: application/json
+
+###
+POST http://localhost:8000/users
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "divo13f",
+  "name": "divo pa",
+  "password": "12345"
+}
+
+###
+POST http://localhost:8000/users
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "div13f",
+  "name": "divo pai",
+  "password": "12345"
+}
+
+###
+POST http://localhost:8000/users/creds
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "div56",
+  "password": "12345"
+}
+### Upload single chunk (tanpa split)
+POST http://localhost:8000/upload
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="fileName"
+
+gambar kejar.png
+--WebAppBoundary
+Content-Disposition: form-data; name="chunkNumber"
+
+0
+--WebAppBoundary
+Content-Disposition: form-data; name="totalChunks"
+
+1
+--WebAppBoundary
+Content-Disposition: form-data; name="chunkData"; filename="gambar.png"
+Content-Type: application/octet-stream
+
+< ./gambar.png
+--WebAppBoundary--
