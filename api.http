@@ -13,13 +13,36 @@ GET https://examples.http-client.intellij.net/get
     ?generated-in=RustRover
 
 ###
+POST http://localhost:8000/categories
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Fiksi"
+}
+
+###
 POST http://localhost:8000/posts
 Accept: application/json
 Content-Type: application/json
 
 {
   "title": "divo test",
-  "text": "Fungsi cognitive"
+  "text": "Fungsi cognitive",
+  "categories": ["Fiksi", "Sejarah"],
+  "uploader": "divo13f"
+}
+
+###
+POST http://localhost:8000/posts
+Accept: application/json
+Content-Type: application/json
+
+{
+  "title": "diagamis",
+  "text": "Aku agamis",
+  "categories": ["Fiksi", "Sejarah"],
+  "uploader": "divo13f"
 }
 
 ###
@@ -65,7 +88,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "username": "div56",
+  "username": "div13f",
   "password": "12345"
 }
 ### Upload single chunk (tanpa split)

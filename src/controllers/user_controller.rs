@@ -70,6 +70,8 @@ pub async fn create_user(
                         "name": user.name,
                        "username": user.username,
                        "password": user.password,
+                        "created_at": user.created_at,
+                        "updated_at": user.updated_at
                    })
                 }).collect::<Vec<_>>()
         ))),
@@ -94,7 +96,7 @@ pub async fn get_user_credentials(
                     json!({
                         "id": user_model.id,
                         "name": user_model.name,
-                        "username": user_model.password,
+                        "username": user_model.username,
                         "profile_picture": user_model.profile_picture
                     })
                 ))),

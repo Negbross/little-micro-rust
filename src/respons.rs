@@ -12,7 +12,16 @@ where
         .map(|item| serde_json::to_value(item).unwrap())
         .collect::<Vec<Value>>();
 
-    Json(json!(list))
+    let message = if list.is_empty() {
+        "No data"
+    } else {
+        "Ok"
+    };
+
+    Json(json!({
+        "data": list,
+        "message": message
+    }))
 }
 
 pub fn api_response_single<T>(item: T) -> impl IntoResponse
