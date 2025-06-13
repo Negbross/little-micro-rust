@@ -6,7 +6,9 @@ I was using JetBrain RustRover, so I use HttpClient plugin \,
 and that was an example image called <ins>gambar.png</ins>
 
 Step:
-`cargo install`
-`sea-orm-cli migrate \`
-`sea-orm-cli generate entity -o entity/src -l \`
-`cargo run`
+```
+cargo install \
+sea-orm-cli migrate \
+sea-orm-cli generate entity -o entity/src -l \
+cargo run
+```
