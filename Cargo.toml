@@ -1,0 +1,36 @@
+[package]
+name = "projek2"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+members = ["entity"]
+
+[dependencies]
+migration = { path = "migration" }
+entity = { path = "entity" }
+
+axum = { version = "0.8.1", features = ["tokio", "tracing", "macros", "multipart"] }
+infer = "0.19.0"
+tokio = { version = "1.43.0", features = ["full"]}
+tower = {version = "0.5.2", features = ["full"]}
+tower-http = { version = "0.6.2", features = ["tracing", "trace", "cors"] }
+tower-cookies = "0.11.0"
+chrono = { version = "0.4.41" }
+slug = { version = "0.1.6"  }
+tracing = { version = "0.1.41", features = ["log"] }
+tracing-subscriber = { version = "0.3.19", features = ["env-filter", "registry"] }
+futures = "0.3.31"
+dotenv = "0.15.0"
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.140"
+sea-orm = { version = "1.1.10", features = ["sqlx-postgres", "runtime-tokio", "macros", "with-uuid", "with-chrono"] }
+anyhow = "1.0.98"
+uuid = { version = "1.17.0", features = ["v4"] }
+
+bcrypt = "0.17.0"
+rand = { version = "0.9.1", features = ["thread_rng", "std"] }
+argon2 = { version = "0.5.3", features = ["std", "rand"] }
+sha3 = "0.10.8"
+hex = "0.4.3"
+regex = "1.11.1"
