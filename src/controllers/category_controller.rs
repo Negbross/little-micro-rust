@@ -1,16 +1,16 @@
-use std::collections::HashMap;
-use std::sync::Arc;
-use axum::extract::{Query, State};
-use axum::http::StatusCode;
-use axum::Json;
-use axum::response::IntoResponse;
-use sea_orm::{ActiveModelTrait, ColumnTrait, EntityOrSelect, EntityTrait, QueryFilter, Set};
-use serde::Deserialize;
-use serde_json::json;
-use entity::category;
 use crate::respons::{api_response, api_response_single};
 use crate::routes::internal_error;
 use crate::utils::{slugify, AppState};
+use axum::extract::{Query, State};
+use axum::http::StatusCode;
+use axum::response::IntoResponse;
+use axum::Json;
+use entity::category;
+use sea_orm::{ActiveModelTrait, ColumnTrait, EntityTrait, QueryFilter, Set};
+use serde::Deserialize;
+use serde_json::json;
+use std::collections::HashMap;
+use std::sync::Arc;
 
 #[derive(Deserialize)]
 pub struct CategoryReq {
